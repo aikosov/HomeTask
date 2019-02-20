@@ -1,0 +1,58 @@
+/**
+ * Напишите программу которая принимает 3 числовых значения и проверяет, могут ли они быть
+ * сторонами треугольника.
+ * Для ввода значений с консоли Вам понадобится класс Scanner.
+ * <code>Scanner scanner = new Scanner(System.in);</code>
+ * <code>scanner.nextInt();</code>
+ */
+
+package com.hometask.task0;
+
+import java.util.Scanner;
+
+public class Task_1 {
+
+    public static void main(String[] args) {
+        Scanner scaner = new Scanner(System.in);
+        System.out.println("Please enter three integer numbers");
+
+        int a = scaner.nextInt();
+        int b = scaner.nextInt();
+        int c = scaner.nextInt();
+
+        int biggest;
+        if (a >= b) {
+            biggest = a;
+
+        } else {
+            biggest = b;
+        }
+        if (c > biggest) {
+            biggest = c;
+        }
+
+        if (biggest == a) {
+            if (a >= b + c) {
+                System.out.println("You cannot create a triangle with sides " + a + " " + b + " " + c);
+            } else {
+                System.out.println("You can create a triangle with sides " + a + " " + b + " " + c);
+            }
+        } else if (biggest == b) {
+            if (b >= a + c) {
+                System.out.println("You cannot create a triangle with sides " + a + " " + b + " " + c);
+            } else {
+                System.out.println("You can create a triangle with sides " + a + " " + b + " " + c);
+            }
+        } else {
+            if (c >= b + a) {
+                System.out.println("You cannot create a triangle with sides " + a + " " + b + " " + c);
+            } else {
+                System.out.println("You can create a triangle with sides " + a + " " + b + " " + c);
+            }
+        }
+
+
+    }
+
+
+}

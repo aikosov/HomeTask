@@ -1,0 +1,44 @@
+/**
+ * Напишите программу, которая принимает заранее неизвестное количество оценок
+ * считает общую сумму оценок и среднее значение.
+ * Оценки должны быть получены с консоли и от запуска к запуску их количество может меняться.
+ * Для этого вам понадобится один из циклических операторов с заранее не известным количеством циклов.
+ * Вспомните, какие бывают циклические операторы и в чем особенность каждого из них.
+ * Так же вам понадобится определенное значение, которое будет обозначать завершение обработки
+ * входящих данных и переход к вычислениям. Так как оценки не могут быть отрицательными,
+ * можно использовать отрицательное целое значение (например -1 или -5) как указатель выхода из цикла.
+ */ 
+
+package com.hometask;
+
+import java.util.Scanner;
+
+public class Task_2 {
+    public static void main(String[] arg) {
+        Scanner input = new Scanner(System.in);
+
+        int total = 0, gradeCounter = 0;
+
+        System.out.println("Please enter grade from 1 till 5 otherwise the program will stop");
+
+        int grade = input.nextInt();
+
+        while (grade > 0 && grade <= 5) {
+            total += grade;
+            gradeCounter++;
+            System.out.println("Please enter grade from 1 till 5 otherwise the program will stop");
+            grade = input.nextInt();
+        }
+
+        if (gradeCounter != 0) {
+
+            double average = (double) total / gradeCounter;
+            System.out.printf("Total of the %d grades entered is %d%n", gradeCounter, total);
+            System.out.printf("Class average is %.2f%n", average);
+        }else{
+            System.out.println("No grades were enter");
+        }
+
+
+    }
+}

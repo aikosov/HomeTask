@@ -9,7 +9,7 @@
  * одно прохождение цикла и попросить снова ввести значение с клавиатуры.
  * У данной задачи есть разные варианты решения.
  * 1) С помощью конвертации чисел в строки и обратно.
- * 2) Решение с помощью использования остатка от деления на 10.
+ * 2) Решение с помощью щю использования остатка от деления на 10.
  * <p>
  * Вам нужно выполнить задания двумя способами.
  */
@@ -18,28 +18,28 @@ package com.hometask;
 
 import java.util.Scanner;
 
-public class Task_3 {
+public class Task_3_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean continueLoop = true;
         while (continueLoop) {
             System.out.println("Please enter a 5 digits palindrome number");
-            int originalInt = scaner.nextInt();
+            int originalInt = scanner.nextInt();
             String convertedInput = String.valueOf(originalInt);
             if (convertedInput.length() != 5) {
-                System.out.println("Error^ input number is not 5 digits long");
+                System.out.println("Error: input number is not 5 digits long");
             } else {
                 continueLoop = false;
                 String reversedString = "";
                 for (int i = convertedInput.length() - 1; i >= 0; i--) {
                     reversedString = reversedString + convertedInput.charAt(i);
                 }
-                int revercedInt = Integer.parseInt (reversedString);
-                if (originalInt == revercedInt) {
-                    System.out.println(originalInt + "is palindrome");
+                int reversedInt = Integer.parseInt(reversedString);
+                if (originalInt == reversedInt) {
+                    System.out.println(originalInt + " is palindrome");
 
                 } else {
-                    System.out.println(originalInt + "is not palindrome");
+                    System.out.println(originalInt + " is not palindrome");
                 }
 
             }
